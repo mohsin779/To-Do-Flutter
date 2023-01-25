@@ -126,12 +126,6 @@ class _AddPostState extends State<AddPost> {
     return Scaffold(
       appBar: AppBar(
         title: Text(args['title']),
-        actions: <Widget>[
-          IconButton(
-            onPressed: _saveForm,
-            icon: Icon(Icons.save),
-          )
-        ],
       ),
       body: _isLoading
           ? Center(
@@ -251,7 +245,21 @@ class _AddPostState extends State<AddPost> {
                           ),
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 30.0, vertical: 8.0),
+                        // color: Theme.of(context).primaryColor,
+                        foregroundColor:
+                            Theme.of(context).primaryTextTheme.button.color,
+                      ),
+                      child: Text('Add'),
+                      onPressed: _saveForm,
+                    ),
                   ],
                 ),
               ),
