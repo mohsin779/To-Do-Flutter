@@ -21,7 +21,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'ToDo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          fontFamily: 'IBMPlexSerif',
+        ).copyWith(
+          colorScheme: ThemeData().colorScheme.copyWith(
+                primary: Colors.blue,
+                // secondary: Colors.deepOrange,
+              ),
         ),
         home: HomePage(),
         routes: {

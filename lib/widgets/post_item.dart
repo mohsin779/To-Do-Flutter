@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do/screens/add_post.dart';
 
 import '../provider/post.dart';
 import '../screens/post_detail.dart';
@@ -26,6 +27,18 @@ class PostItem extends StatelessWidget {
           title: Text(
             post.title,
             textAlign: TextAlign.center,
+            style: TextStyle(fontFamily: "IBMPlexSerif"),
+          ),
+        ),
+        header: GridTile(
+          child: IconButton(
+            icon: Icon(Icons.edit),
+            alignment: Alignment.topRight,
+            onPressed: () {
+              Navigator.of(context).pushNamed(AddPost.routeName,
+                  arguments: {'postId': post.id, 'title': 'Edit Post'});
+            },
+            color: Colors.white,
           ),
         ),
       ),
